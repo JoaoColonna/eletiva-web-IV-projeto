@@ -1,0 +1,15 @@
+{
+    "name": "php/projetocomposer",
+    "autoload": {
+        "psr-4": {
+            "Php\\Projetocomposer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "JoaoColonna",
+            "email": "joao.colonna@outlook.com"
+        }
+    ],
+    "require": {}
+}
