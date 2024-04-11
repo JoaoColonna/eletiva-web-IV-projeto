@@ -13,8 +13,24 @@ class HomeController
         require_once("../src/Views/exer1.html");
     }
 
+    public function formExer2($params){
+        require_once("../src/Views/exer2.html");
+    }
+
+    public function formExer3($params){
+        require_once("../src/Views/exer3.html");
+    }
+
     public function formExer4($params){
         require_once("../src/Views/exer4.php");
+    }
+
+    public function formExer5($params){
+        require_once("../src/Views/exer5.html");
+    }
+
+    public function formExer6($params){
+        require_once("../src/Views/exer6.html");
     }
 }
  
