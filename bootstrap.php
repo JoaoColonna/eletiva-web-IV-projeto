@@ -31,6 +31,18 @@ $r->get('/exer5/formulario',
 $r->get('/exer6/formulario',
     'Php\Projetocomposer\Controllers\HomeController@formExer6');
 
+$r->get('/exer7/formulario',
+    'Php\Projetocomposer\Controllers\HomeController@formExer7');
+
+$r->get('/exer8/formulario',
+    'Php\Projetocomposer\Controllers\HomeController@formExer8');
+
+$r->get('/exer9/formulario',
+    'Php\Projetocomposer\Controllers\HomeController@formExer9');
+
+$r->get('/exer10/formulario',
+    'Php\Projetocomposer\Controllers\HomeController@formExer10');
+
 $r->post('/exer1/resposta', function(){
     $valor = $_POST['valor'];
     if($valor > 0){
@@ -102,6 +114,68 @@ $r->post('/exer6/resposta', function(){
     }
     return $str;
         
+});
+
+$r->post('/exer7/resposta', function(){
+    $valor = floatval(str_replace(",",".",$_POST['valor']));
+    return $valor * 100 . " centímetros";
+});
+
+$r->post('/exer8/resposta', function(){
+    $valor = floatval(str_replace(",",".",$_POST['valor']));
+
+    $litros_de_tinta = $valor / 3;
+    $latas_de_tinta = ceil($litros_de_tinta / 18);
+    $preco_total = $latas_de_tinta * 80;
+
+    echo "Você precisará comprar $latas_de_tinta latas de tinta.\n";
+    echo "O preço total será de R$ $preco_total.\n";
+    
+});
+
+$r->post('/exer9/resposta', function(){
+
+    function ehBissexto($ano) {
+        return (($ano % 4 == 0 && $ano % 100 != 0) || $ano % 400 == 0);
+    }
+
+    $valor = intval($_POST['valor']);
+    DEFINE('ano_atual', date("Y"));
+    $idade = ano_atual - $valor;
+
+    $dias_vividos = 0;
+    for ($i = $valor; $i < ano_atual; $i++) {
+        if (ehBissexto($i)) {
+            $dias_vividos += 366;
+        } else {
+            $dias_vividos += 365;
+        }
+    }
+
+    echo "A pessoa tem ". $idade . " anos. \n";
+    echo "A pessoa já viveu $dias_vividos dias.\n"; 
+    echo "Em 2025 ela terá " . 2025 - $valor . " anos.";
+});
+
+$r->post('/exer10/resposta', function(){
+    $peso = floatval(str_replace(",",".",$_POST['peso']));
+    $altura = floatval(str_replace(",",".",$_POST['altura']));
+
+    $imc = $peso / ($altura * $altura);
+
+    $categoria = "";
+    if ($imc < 18.5) {
+        $categoria = "Abaixo do peso";
+    } elseif ($imc >= 18.5 && $imc < 25) {
+        $categoria = "Peso normal";
+    } elseif ($imc >= 25 && $imc < 30) {
+        $categoria = "Acima do peso";
+    } else {
+        $categoria = "Obeso";
+    }
+
+    echo "Seu IMC é: $imc.\n";
+    echo "Você está classificado como: $categoria";
 });
 
 #ROTAS
