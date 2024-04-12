@@ -178,6 +178,13 @@ $r->post('/exer10/resposta', function(){
     echo "Você está classificado como: $categoria";
 });
 
+// CRUD petshop
+
+$r->get('/cliente/inserir',
+    'Php\Projetocomposer\Controllers\ClienteController@inserir');
+
+$r->post('/cliente/novo',
+    'Php\Projetocomposer\Controllers\ClienteController@inserir');
 #ROTAS
 
 $resultado = $r->handler();
