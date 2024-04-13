@@ -19,7 +19,7 @@ $r->get('/exer1/formulario',
 $r->get('/exer2/formulario', 
     'Php\Projetocomposer\Controllers\HomeController@formExer2');
 
-    $r->get('/exer3/formulario', 
+$r->get('/exer3/formulario', 
     'Php\Projetocomposer\Controllers\HomeController@formExer3');
     
 $r->get('/exer4/formulario',
@@ -182,9 +182,23 @@ $r->post('/exer10/resposta', function(){
 
 $r->get('/cliente/inserir',
     'Php\Projetocomposer\Controllers\ClienteController@inserir');
-
 $r->post('/cliente/novo',
-    'Php\Projetocomposer\Controllers\ClienteController@inserir');
+    'Php\Projetocomposer\Controllers\ClienteController@novo');
+
+$r->get('/pet/inserir',
+    'Php\Projetocomposer\Controllers\PetController@inserir');
+$r->post('/pet/novo',
+    'Php\Projetocomposer\Controllers\PetController@novo');
+
+$r->get('/produto/inserir',
+    'Php\Projetocomposer\Controllers\ProdutoController@inserir');
+$r->post('/produto/novo',
+    'Php\Projetocomposer\Controllers\ProdutoController@novo');
+
+$r->get('/servico/inserir',
+    'Php\Projetocomposer\Controllers\ServicoController@inserir');
+$r->post('/servico/novo',
+    'Php\Projetocomposer\Controllers\ServicoController@novo');
 #ROTAS
 
 $resultado = $r->handler();
