@@ -2,18 +2,14 @@
 
 namespace Php\Projetocomposer\Models\Domain;
 
-class Produto{
+class Categoria{
 
     private $id;
-    private $nome;
     private $descricao;
-    private $valor;
 
-    public function __construct($id, $nome, $descricao, $valor){
+    public function __construct($id, $descricao){
         $this->setId($id);
-        $this->setNome($nome);
         $this->setDescricao($descricao);
-        $this->setValor($valor);
     }
 
     public function getId(){
@@ -24,13 +20,6 @@ class Produto{
         $this->id = $id;
     }
 
-    public function getNome(){
-        return $this->nome;
-    }
-
-    public function setNome($nome){
-        $this->nome = $nome;
-    }
 
     public function getDescricao(){
         return $this->descricao;
@@ -38,13 +27,5 @@ class Produto{
     
     public function setDescricao($descricao){
         $this->descricao = $descricao;
-    }
-
-    public function getValor(){
-        return $this->valor;
-    }
-
-    public function setValor($valor){
-        $this->valor = $valor;
     }
 }

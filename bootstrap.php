@@ -200,14 +200,19 @@ $r->get('/servico/inserir',
 $r->post('/servico/novo',
     'Php\Projetocomposer\Controllers\ServicoController@novo');
 
+
 //Chamando o formulário para inserir categoria
 $r->get('/categoria/inserir',
     'Php\Projetocomposer\Controllers\CategoriaController@inserir');
+
 $r->post('/categoria/novo',
     'Php\Projetocomposer\Controllers\CategoriaController@novo');
+
 $r->get('/categoria',
     'Php\Projetocomposer\Controllers\CategoriaController@index');
 
+$r->get('/categoria/{acao}/{status}',
+    'Php\Projetocomposer\Controllers\CategoriaController@index');
 
 #ROTAS
 $resultado = $r->handler();
