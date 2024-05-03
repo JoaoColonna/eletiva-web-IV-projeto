@@ -205,8 +205,14 @@ $r->post('/servico/novo',
 $r->get('/categoria/inserir',
     'Php\Projetocomposer\Controllers\CategoriaController@inserir');
 
+$r->get('/categoria/alterar/id/{id}',
+    'Php\Projetocomposer\Controllers\CategoriaController@alterar');
+
 $r->post('/categoria/novo',
     'Php\Projetocomposer\Controllers\CategoriaController@novo');
+
+$r->post('/categoria/editar',
+    'Php\Projetocomposer\Controllers\CategoriaController@editar');
 
 $r->get('/categoria',
     'Php\Projetocomposer\Controllers\CategoriaController@index');
