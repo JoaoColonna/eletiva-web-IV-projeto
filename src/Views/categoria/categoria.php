@@ -16,20 +16,22 @@
         </div>
         
         </div>
-        <!-- <table id="tabela" class="table table-striped"> -->
-        <table id="tabela"></table>
+        <table id="tabela" class="table table-striped">
+        <!-- <table id="tabela"> -->
             <thead>
                 <tr scope="col">
                     <th class="w-75 p-3">Descrição</th>
-                    <th colspan="2">Ações</th>
+                    <th>Ações</th>
                 </tr>
             </thead>
             <tbody>
                 <?php foreach ($categorias as $categ): ?>
                     <tr>
                       <td><?=$categ['descricao']?></td>
-                      <td><button type="button" class="btn btn-warning">Alterar</button></td>
-                      <td><button type="button" class="btn btn-danger">Excluir</button></td>
+                      <td>
+                        <button type="button" class="btn btn-danger">Excluir</button>
+                        <button type="button" class="btn btn-warning">Alterar</button>
+                      </td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

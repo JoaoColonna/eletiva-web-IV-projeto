@@ -23,7 +23,7 @@ class CategoriaDAO{
         }
     }
 
-    public function alterar($id){
+    public function alterar($categoria){
         try {
             $sql = "UPDATE categoria set (descricao = :descricao) where id = {$categoria->getId()}";
             $p = $this->conexao->getConexao()->prepare($sql);
@@ -39,7 +39,7 @@ class CategoriaDAO{
             $p = $this->conexao->getConexao()->prepare($sql);
             $p->execute();
             return $p->fetchAll();
-        } catch (\Exceptiom $th) {
+        } catch (\Exception $th) {
             return 0;
         }
     }

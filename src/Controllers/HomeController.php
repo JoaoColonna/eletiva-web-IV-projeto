@@ -9,6 +9,10 @@ class HomeController
         return "Olá Mundo!";
     }
 
+    public function menu($params){
+        require_once("../src/Views/Home/index.php");
+    }
+
     public function formExer1($params){
         require_once("../src/Views/lista2/exer1.html");
     }

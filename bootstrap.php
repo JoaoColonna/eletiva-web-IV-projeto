@@ -178,27 +178,64 @@ $r->post('/exer10/resposta', function(){
     echo "Você está classificado como: $categoria";
 });
 
-// CRUD petshop
 
-$r->get('/cliente/inserir',
-    'Php\Projetocomposer\Controllers\ClienteController@inserir');
-$r->post('/cliente/novo',
-    'Php\Projetocomposer\Controllers\ClienteController@novo');
+// navigation routes
+$r->get('/menu',
+    'Php\Projetocomposer\Controllers\HomeController@menu');
 
+// Rotas para PetController
+$r->get('/pet',
+    'Php\Projetocomposer\Controllers\PetController@index');
+$r->get('/pet/{acao}/{status}',
+    'Php\Projetocomposer\Controllers\PetController@index');
 $r->get('/pet/inserir',
     'Php\Projetocomposer\Controllers\PetController@inserir');
 $r->post('/pet/novo',
     'Php\Projetocomposer\Controllers\PetController@novo');
+$r->get('/pet/editar/id/{id}',
+    'Php\Projetocomposer\Controllers\PetController@update');
+$r->post('/pet/editar',
+    'Php\Projetocomposer\Controllers\PetController@editar');
+$r->get('/pet/excluir/id/{id}',
+    'Php\Projetocomposer\Controllers\PetController@excluir');
+$r->post('/pet/excluir',
+    'Php\Projetocomposer\Controllers\PetController@deletar');
 
+// Rotas para ProdutoController
+$r->get('/produto',
+    'Php\Projetocomposer\Controllers\ProdutoController@index');
+$r->get('/produto/{acao}/{status}',
+    'Php\Projetocomposer\Controllers\ProdutoController@index');
 $r->get('/produto/inserir',
     'Php\Projetocomposer\Controllers\ProdutoController@inserir');
 $r->post('/produto/novo',
     'Php\Projetocomposer\Controllers\ProdutoController@novo');
+$r->get('/produto/editar/id/{id}',
+    'Php\Projetocomposer\Controllers\ProdutoController@update');
+$r->post('/produto/editar',
+    'Php\Projetocomposer\Controllers\ProdutoController@editar');
+$r->get('/produto/excluir/id/{id}',
+    'Php\Projetocomposer\Controllers\ProdutoController@excluir');
+$r->post('/produto/excluir',
+    'Php\Projetocomposer\Controllers\ProdutoController@deletar');
 
+// Rotas para ServicoController
+$r->get('/servico',
+    'Php\Projetocomposer\Controllers\ServicoController@index');
+$r->get('/servico/{acao}/{status}',
+    'Php\Projetocomposer\Controllers\ServicoController@index');
 $r->get('/servico/inserir',
     'Php\Projetocomposer\Controllers\ServicoController@inserir');
 $r->post('/servico/novo',
     'Php\Projetocomposer\Controllers\ServicoController@novo');
+$r->get('/servico/editar/id/{id}',
+    'Php\Projetocomposer\Controllers\ServicoController@update');
+$r->post('/servico/editar',
+    'Php\Projetocomposer\Controllers\ServicoController@editar');
+$r->get('/servico/excluir/id/{id}',
+    'Php\Projetocomposer\Controllers\ServicoController@excluir');
+$r->post('/servico/excluir',
+    'Php\Projetocomposer\Controllers\ServicoController@deletar');
 
 
 //Chamando o formulário para inserir categoria
