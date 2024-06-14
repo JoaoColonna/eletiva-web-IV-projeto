@@ -28,6 +28,10 @@
                         <h4>Categoria</h4>
                         <a href="/categoria" class="btn btn-primary m-1">Visualizar</a>
                     </div>
+                    <div class="col p-3">
+                        <h4>Serviço</h4>
+                        <a href="/servico" class="btn btn-primary m-1">Visualizar</a>
+                    </div>
                 </div>
                 <div class="row"></div>
                 <div class="row"></div>

@@ -180,7 +180,7 @@ $r->post('/exer10/resposta', function(){
 
 
 // navigation routes
-$r->get('/menu',
+$r->get('/',
     'Php\Projetocomposer\Controllers\HomeController@menu');
 
 // Rotas para PetController
@@ -237,23 +237,36 @@ $r->get('/servico/excluir/id/{id}',
 $r->post('/servico/excluir',
     'Php\Projetocomposer\Controllers\ServicoController@deletar');
 
+// Rotas para ClienteController
+$r->get('/cliente',
+    'Php\Projetocomposer\Controllers\ClienteController@index');
+$r->get('/cliente/{acao}/{status}',
+    'Php\Projetocomposer\Controllers\ClienteController@index');
+$r->get('/cliente/inserir',
+    'Php\Projetocomposer\Controllers\ClienteController@inserir');
+$r->post('/cliente/novo',
+    'Php\Projetocomposer\Controllers\ClienteController@novo');
+$r->get('/cliente/editar/id/{id}',
+    'Php\Projetocomposer\Controllers\ClienteController@update');
+$r->post('/cliente/editar',
+    'Php\Projetocomposer\Controllers\ClienteController@editar');
+$r->get('/cliente/excluir/id/{id}',
+    'Php\Projetocomposer\Controllers\ClienteController@excluir');
+$r->post('/cliente/excluir',
+    'Php\Projetocomposer\Controllers\ClienteController@deletar');
+
 
 //Chamando o formulário para inserir categoria
 $r->get('/categoria/inserir',
     'Php\Projetocomposer\Controllers\CategoriaController@inserir');
-
 $r->get('/categoria/alterar/id/{id}',
     'Php\Projetocomposer\Controllers\CategoriaController@alterar');
-
 $r->post('/categoria/novo',
     'Php\Projetocomposer\Controllers\CategoriaController@novo');
-
 $r->post('/categoria/editar',
     'Php\Projetocomposer\Controllers\CategoriaController@editar');
-
 $r->get('/categoria',
     'Php\Projetocomposer\Controllers\CategoriaController@index');
-
 $r->get('/categoria/{acao}/{status}',
     'Php\Projetocomposer\Controllers\CategoriaController@index');
 
